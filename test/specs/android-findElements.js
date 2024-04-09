@@ -26,4 +26,41 @@ it('find element by xpath',async()=>{
         await $('//android.widget.Button[@resource-id="io.appium.android.apis:id/select_button"]').click();
 });
 
+it('find multiple elements', async()=>{
+    const expectedList = [
+        'API Demos', "Access'ibility",
+        'Accessibility', 'Animation',
+        'App', 'Content',
+        'Graphics', 'Media',
+        'NFC', 'OS',
+        'Preference', 'Text',
+        'Views', "Header title"
+      ]
+
+    const actualList = []
+
+     const textList = await $$('android.widget.TextView')
+
+     for(const element of textList)  {
+        actualList.push(await element.getText());
+     }
+
+     await expect(actualList).toEqual(expectedList)
+
+});
+
+it.only('working with text field',async()=>{
+
+        await $('~Views').click();
+        await driver.pause(2000);
+        await $('~Auto Complete').click();
+        await $('~1. Screen Top').click();
+
+        const textfield =  await $('android.widget.AutoCompleteTextView');
+        await textfield.addValue('Canada');
+
+        await expect (textfield).toHaveText('Canada');
+
+});
+
 });
