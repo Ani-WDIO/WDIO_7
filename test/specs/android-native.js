@@ -30,7 +30,7 @@ describe('',()=>{
         await expect($('//*[resource-id="android:id/alertTitle"]')).not.toExist();
     });
 
-    it.only('Get text from Dialog Boxes',async()=>{
+    it('Get text from Dialog Boxes',async()=>{
 
         await driver.startActivity("io.appium.android.apis","io.appium.android.apis.app.AlertDialogSamples");
           
@@ -40,5 +40,17 @@ describe('',()=>{
 
         await expect($('//*[resource-id="android:id/alertTitle"]')).not.toExist();
     });
+
+    it.only('Vertical Scrolling',async()=>{
+
+        await $('~App').click();
+        await $('~Activity').click();
+
+        await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Secure Surfaces")').click();
+
+        await expect($('~Secure Dialog')).toExist();
+    });
+
+    
 
 })
