@@ -27,7 +27,7 @@ exports.config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/android-native.js'
+        './test/specs/add-note.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -62,9 +62,9 @@ exports.config = {
         'appium:deviceName': 'myDevice',
         'appium:platformVersion': '14.0',
         'appium:automationName': 'UiAutomator2',
-        'appium:autoGrantPermission' : true,
-        'appium:app': path.join(process.cwd(),'app/ApiDemos-debug.apk')
-     //   'appium:app': path.join(process.cwd(),'app/ColorNote+Notepad.apk')
+        'appium:autoGrantPermissions' : true,
+     //   'appium:app': path.join(process.cwd(),'app/ApiDemos-debug.apk')
+        'appium:app': path.join(process.cwd(),'app/ColorNote+Notepad.apk')
     }],
 
     //
