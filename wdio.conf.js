@@ -62,7 +62,9 @@ exports.config = {
         'appium:deviceName': 'myDevice',
         'appium:platformVersion': '14.0',
         'appium:automationName': 'UiAutomator2',
+        'appium:autoGrantPermission' : true,
         'appium:app': path.join(process.cwd(),'app/ApiDemos-debug.apk')
+     //   'appium:app': path.join(process.cwd(),'app/ColorNote+Notepad.apk')
     }],
 
     //

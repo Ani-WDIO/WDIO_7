@@ -41,7 +41,7 @@ describe('',()=>{
         await expect($('//*[resource-id="android:id/alertTitle"]')).not.toExist();
     });
 
-    it.only('Vertical Scrolling',async()=>{
+    it('Vertical Scrolling',async()=>{
 
         await $('~App').click();
         await $('~Activity').click();
@@ -49,6 +49,20 @@ describe('',()=>{
         await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Secure Surfaces")').click();
 
         await expect($('~Secure Dialog')).toExist();
+    });
+
+    it('Horizontal Scrolling',async()=>{
+
+        await driver.startActivity(
+            "io.appium.android.apis",
+            "io.appium.android.apis.view.Gallery1"
+          );
+      
+          // Horizontal scrolling
+          await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollForward()');
+          await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollBackward()');
+      
+          await driver.pause(3000);
     });
 
     
