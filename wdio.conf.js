@@ -27,7 +27,7 @@ exports.config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/add-note.js'
+        './test/specs/add-note_POM.js'
     ],
     // Patterns to exclude.
     exclude: [
